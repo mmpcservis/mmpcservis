@@ -3,335 +3,378 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MM PC Servis | Popravak računala i laptopa | Čitluk / Mostar</title>
-  <meta name="description" content="MM PC Servis - popravak računala i laptopa u Čitluku i Mostaru. Instalacija Windowsa, uklanjanje virusa, SSD upgrade, čišćenje laptopa i spašavanje podataka." />
-  <meta name="keywords" content="PC servis Čitluk, PC servis Mostar, popravak laptopa Mostar, instalacija Windowsa Čitluk, SSD upgrade Mostar, MM PC Servis" />
-  <meta name="theme-color" content="#ff6a00" />
-  <meta property="og:title" content="MM PC Servis | Čitluk / Mostar" />
-  <meta property="og:description" content="Brz i pouzdan popravak računala i laptopa. Nazovi odmah: +387 63 568 492" />
+  <title>MM PC Servis | Gaming Tech Edition | Čitluk / Mostar</title>
+  <meta name="description" content="MM PC Servis - gaming tech verzija web stranice za popravak računala i laptopa u Čitluku i Mostaru. Instalacija Windowsa, uklanjanje virusa, SSD upgrade, čišćenje laptopa i spašavanje podataka." />
+  <meta name="keywords" content="MM PC Servis, PC servis Čitluk, PC servis Mostar, gaming tech servis, popravak laptopa Mostar, instalacija Windowsa Čitluk, SSD upgrade Mostar" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#05070d" />
+  <meta property="og:title" content="MM PC Servis | Gaming Tech Edition" />
+  <meta property="og:description" content="Gaming / tech stil za servis računala i laptopa. Nazovi: +387 63 568 492" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="hr_HR" />
   <style>
     :root{
-      --bg:#0b0d10;
-      --panel:#12161b;
-      --panel-2:#171d24;
-      --text:#f4f7fb;
-      --muted:#b8c1cc;
+      --bg:#05070d;
+      --bg2:#0a1020;
+      --panel:#0b1220cc;
+      --panel2:#0d1629;
+      --text:#f7fbff;
+      --muted:#b8c4e0;
+      --muted2:#8aa0c5;
+      --cyan:#44e3ff;
+      --violet:#8a5cff;
+      --green:#2dffb2;
+      --pink:#ff5ccf;
       --line:rgba(255,255,255,.08);
-      --accent:#ff6a00;
-      --accent-2:#ff9a3c;
-      --success:#27d17f;
-      --shadow:0 20px 60px rgba(0,0,0,.35);
-      --radius:24px;
-      --max:1140px;
+      --radius:26px;
+      --shadow:0 24px 80px rgba(0,0,0,.45);
+      --max:1180px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Inter, Arial, Helvetica, sans-serif;
       color:var(--text);
+      font-family:Inter,Segoe UI,Arial,sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(255,106,0,.20), transparent 28%),
-        radial-gradient(circle at left center, rgba(255,154,60,.10), transparent 30%),
-        linear-gradient(180deg, #0a0d11 0%, #0c1015 100%);
-      line-height:1.55;
+        radial-gradient(circle at 10% 0%, rgba(68,227,255,.14), transparent 20%),
+        radial-gradient(circle at 90% 10%, rgba(138,92,255,.16), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(45,255,178,.08), transparent 18%),
+        linear-gradient(180deg, #04060b 0%, #09101d 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed; inset:0; pointer-events:none; z-index:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+      background-size:32px 32px;
+      mask-image:radial-gradient(circle at center, rgba(0,0,0,.7), transparent 85%);
     }
 
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max), calc(100% - 28px)); margin:auto; position:relative; z-index:1}
 
-    .wrap{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .glass::after{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:inherit;
+      padding:1px;
+      background:linear-gradient(135deg, rgba(68,227,255,.35), rgba(138,92,255,.22), rgba(45,255,178,.18));
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+              mask-composite:exclude;
+      pointer-events:none;
+      opacity:.55;
+    }
 
     .topbar{
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(14px);
-      background:rgba(10,13,17,.72);
-      border-bottom:1px solid var(--line);
+      position:sticky; top:0; z-index:90;
+      background:rgba(5,7,13,.72);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.07);
     }
 
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; min-height:72px;
+      min-height:76px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
     }
 
     .brand{
-      display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px;
+      display:flex; align-items:center; gap:12px;
+      font-weight:900; letter-spacing:.2px;
     }
 
-    .brand-badge{
-      width:42px; height:42px; border-radius:14px;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      display:grid; place-items:center; color:#111; font-weight:900;
-      box-shadow:var(--shadow);
+    .brand-mark{
+      width:46px; height:46px; border-radius:16px;
+      display:grid; place-items:center;
+      color:#051018;
+      background:linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow:0 0 0 1px rgba(255,255,255,.07), 0 12px 40px rgba(68,227,255,.2);
+      font-weight:900;
     }
 
     .nav-links{
-      display:flex; gap:18px; flex-wrap:wrap; color:var(--muted); font-size:.95rem;
+      display:flex; flex-wrap:wrap; gap:18px;
+      color:var(--muted2); font-size:.95rem;
+    }
+    .nav-links a:hover{color:var(--text)}
+
+    .nav-btn,.btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      min-height:52px; padding:0 18px; border-radius:999px; font-weight:900;
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+    }
+    .nav-btn:hover,.btn:hover{transform:translateY(-2px)}
+    .nav-btn{
+      color:#06111a;
+      background:linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow:0 18px 40px rgba(68,227,255,.18);
     }
 
-    .nav-cta{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 18px; border-radius:999px; font-weight:800;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:#121212; box-shadow:var(--shadow);
-    }
-
-    .hero{padding:64px 0 26px}
+    .hero{padding:58px 0 24px}
     .hero-grid{
-      display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:stretch;
+      display:grid; grid-template-columns:1.08fr .92fr; gap:20px;
+      align-items:stretch;
     }
 
-    .hero-card,.panel{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border:1px solid var(--line);
+    .hero-main,.hero-side-card,.card,.contact-card,.map-card,.seo-card{
       border-radius:var(--radius);
-      box-shadow:var(--shadow);
     }
 
-    .hero-card{padding:34px}
+    .hero-main{
+      padding:38px;
+      isolation:isolate;
+    }
+
+    .hero-main::before{
+      content:"";
+      position:absolute; width:420px; height:420px; right:-120px; bottom:-180px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(68,227,255,.24), transparent 62%);
+      filter:blur(10px);
+      animation:pulse 6s ease-in-out infinite;
+      z-index:-1;
+    }
+
+    .hero-main::after{
+      content:"";
+      position:absolute; width:300px; height:300px; left:-120px; top:-140px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(138,92,255,.18), transparent 62%);
+      filter:blur(10px);
+      animation:pulse 7s ease-in-out infinite reverse;
+      z-index:-1;
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.08)}
+    }
+
     .eyebrow{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 12px; border-radius:999px;
-      background:rgba(255,106,0,.12);
-      color:#ffd3b0; border:1px solid rgba(255,106,0,.18);
-      font-size:.88rem; font-weight:700;
+      color:#dff9ff; font-weight:800; font-size:.9rem;
+      border:1px solid rgba(68,227,255,.18);
+      background:rgba(68,227,255,.08);
       margin-bottom:18px;
     }
 
     h1{
-      margin:0 0 16px; font-size:clamp(2.2rem, 5vw, 4.35rem);
-      line-height:1.02; letter-spacing:-.03em;
+      margin:0 0 14px;
+      font-size:clamp(2.3rem, 5vw, 4.6rem);
+      line-height:1.01; letter-spacing:-.04em;
+    }
+
+    .glow{
+      background:linear-gradient(135deg, var(--cyan), #c7f7ff 35%, var(--violet) 75%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
 
     .lead{
-      color:var(--muted); font-size:1.12rem; max-width:58ch;
-      margin:0 0 24px;
+      margin:0 0 22px;
+      color:var(--muted);
+      max-width:62ch;
+      font-size:1.08rem;
     }
 
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:22px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      min-height:52px; padding:0 20px; border-radius:999px;
-      font-weight:800; border:1px solid var(--line);
-      transition:transform .15s ease, opacity .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px)}
+    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px}
     .btn-primary{
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:#111;
-      border:none;
-      box-shadow:var(--shadow);
+      color:#06111a;
+      background:linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow:0 20px 40px rgba(68,227,255,.18);
     }
     .btn-secondary{
-      background:rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
       color:var(--text);
     }
 
-    .mini-points{
-      display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px;
-      margin-top:16px;
+    .badge-row{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;
+    }
+    .badge{
+      padding:9px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.025);
+      color:var(--muted);
+      font-size:.9rem;
     }
 
-    .mini{
-      padding:14px; border-radius:18px;
-      background:rgba(255,255,255,.03); border:1px solid var(--line);
-      color:var(--muted); font-size:.95rem;
-    }
+    .hero-side{display:grid; gap:18px}
+    .hero-side-card{padding:24px}
 
-    .mini strong{display:block; color:var(--text); margin-bottom:4px}
-
-    .right-stack{
-      display:grid; gap:18px;
-    }
-
-    .stats-card{padding:24px}
     .stats-grid{
       display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;
+      margin-top:10px;
     }
 
     .stat{
-      padding:18px; border-radius:20px; background:var(--panel);
-      border:1px solid var(--line);
+      padding:16px; border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     }
-
-    .stat b{font-size:1.35rem; display:block; margin-bottom:6px}
-    .stat span{color:var(--muted); font-size:.94rem}
-
-    .callout{
-      padding:24px; background:
-      linear-gradient(180deg, rgba(255,106,0,.14), rgba(255,106,0,.06));
-      border:1px solid rgba(255,106,0,.18);
+    .stat:hover,.card:hover,.contact-link:hover{
+      transform:translateY(-3px);
+      border-color:rgba(68,227,255,.25);
+      box-shadow:0 18px 40px rgba(68,227,255,.08);
     }
+    .stat b{display:block; margin-bottom:6px; font-size:1.08rem}
+    .stat span{color:var(--muted2); font-size:.94rem}
 
-    .callout h3{margin:0 0 10px; font-size:1.2rem}
-    .callout p{margin:0 0 16px; color:#ffe4d1}
-
-    section{padding:26px 0}
+    section{padding:20px 0}
     .section-head{
       display:flex; justify-content:space-between; gap:16px; align-items:end;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
-    .section-head h2{margin:0; font-size:clamp(1.6rem,3vw,2.4rem)}
-    .section-head p{margin:0; color:var(--muted); max-width:55ch}
+    .section-head h2{margin:0; font-size:clamp(1.65rem, 3vw, 2.35rem); letter-spacing:-.02em}
+    .section-head p{margin:0; color:var(--muted2); max-width:60ch}
 
-    .grid-3{
-      display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;
-    }
-    .grid-2{
-      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px;
-    }
+    .grid-3,.grid-2{display:grid; gap:16px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 
-    .card{
-      padding:22px;
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:var(--shadow);
-    }
-
-    .card h3,.card h4{margin:0 0 10px}
-    .card p{margin:0; color:var(--muted)}
-
-    .problem{
-      border-left:3px solid var(--accent);
-    }
+    .card,.contact-card,.map-card,.seo-card{padding:24px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease}
+    .card h3,.contact-card h3,.map-card h3,.seo-card h3{margin:0 0 8px}
+    .card p,.contact-card p,.map-card p,.seo-card p{margin:0; color:var(--muted)}
+    .problem{border-left:3px solid var(--cyan)}
 
     .list{
-      margin:14px 0 0; padding:0; list-style:none;
+      list-style:none; padding:0; margin:14px 0 0;
       display:grid; gap:10px;
     }
     .list li{
-      color:var(--muted);
-      padding-left:26px;
-      position:relative;
+      position:relative; padding-left:26px; color:var(--muted);
     }
     .list li::before{
-      content:"✓";
-      position:absolute; left:0; top:0; font-weight:900; color:var(--success);
+      content:"✓"; position:absolute; left:0; top:0;
+      color:var(--green); font-weight:900;
     }
 
-    .trust{
-      display:grid; grid-template-columns:1.1fr .9fr; gap:18px;
+    .tech-strip{
+      display:grid; grid-template-columns:1.1fr .9fr; gap:16px;
     }
 
-    .faq{display:grid; gap:14px}
+    .code-panel{
+      border:1px solid rgba(68,227,255,.16);
+      background:
+        linear-gradient(180deg, rgba(68,227,255,.07), rgba(138,92,255,.05)),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.016));
+    }
+
+    .terminal{
+      margin-top:14px;
+      padding:16px; border-radius:18px;
+      background:#08111f;
+      border:1px solid rgba(138,92,255,.14);
+      font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color:#d2dcff; font-size:.95rem; overflow:auto;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.02);
+    }
+    .terminal .good{color:#8cf7d0}
+    .terminal .accent{color:#9adfff}
+    .terminal .warn{color:#ffd1a8}
+
+    .faq-list{display:grid; gap:12px}
     details{
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:18px 18px 18px 18px;
+      border-radius:18px; padding:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018));
+      transition:border-color .18s ease, transform .18s ease;
     }
+    details:hover{border-color:rgba(68,227,255,.2)}
     summary{
-      cursor:pointer; font-weight:800; list-style:none;
+      cursor:pointer; font-weight:900; list-style:none;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
     summary::-webkit-details-marker{display:none}
-    details p{margin:12px 0 0; color:var(--muted)}
+    summary::after{
+      content:"+";
+      color:var(--cyan);
+      font-size:1.2rem; font-weight:900;
+      transition:transform .15s ease;
+    }
+    details[open]{transform:translateY(-2px)}
+    details[open] summary::after{content:"–"}
+    details p{display:none}
+    details[open] p{display:block; margin:12px 0 0; color:var(--muted)}
 
-    .seo-block{
-      font-size:.98rem;
+    .map-box{
+      border-radius:20px; overflow:hidden; margin-top:14px;
+      border:1px solid rgba(255,255,255,.08);
+      min-height:300px; background:#08101f;
+    }
+    .map-box iframe{
+      width:100%; height:300px; border:0; display:block;
+      filter:grayscale(.22) saturate(.95) contrast(1.04);
     }
 
-    .contact{
-      display:grid; grid-template-columns:1fr .95fr; gap:18px;
+    .contact-links{
+      display:grid; gap:10px; margin-top:14px;
     }
-    .contact-card{
-      padding:26px;
+    .contact-link{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:14px 16px; border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.016));
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     }
-
-    .contact-list{
-      list-style:none; padding:0; margin:16px 0 0; display:grid; gap:12px;
-    }
-    .contact-list li{
-      color:var(--muted);
-    }
-
-    .phone{
-      font-size:clamp(1.8rem, 4vw, 2.8rem);
-      font-weight:900;
-      line-height:1.05;
-      margin:8px 0 14px;
-    }
+    .contact-link span:last-child{color:var(--muted2); font-size:.94rem}
 
     .footer{
-      padding:34px 0 100px;
-      color:var(--muted);
-      text-align:center;
-      font-size:.92rem;
+      text-align:center; color:var(--muted2);
+      font-size:.92rem; padding:26px 0 106px;
     }
 
     .floating{
-      position:fixed; right:16px; bottom:16px; z-index:40;
+      position:fixed; right:14px; bottom:14px; z-index:95;
       display:flex; flex-direction:column; gap:10px;
     }
-
     .floating a{
-      min-width:160px;
-      display:flex; align-items:center; justify-content:center; gap:10px;
-      padding:14px 16px;
-      border-radius:999px;
-      font-weight:900;
+      min-width:180px; padding:14px 16px; border-radius:999px;
+      font-weight:900; display:flex; align-items:center; justify-content:center; gap:10px;
       box-shadow:var(--shadow);
     }
-
     .float-call{
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:#111;
+      color:#06111a;
+      background:linear-gradient(135deg, var(--cyan), var(--violet));
     }
-
     .float-wa{
-      background:#1fce66;
-      color:#08120d;
+      color:#04110d;
+      background:#25D366;
     }
 
-    .badge-row{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;
+    @media (max-width: 980px){
+      .hero-grid,.tech-strip,.grid-3,.grid-2{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:1fr 1fr}
+      .nav{flex-wrap:wrap; padding:10px 0 14px}
+      .nav-links{width:100%; order:3}
     }
-    .badge{
-      font-size:.88rem; color:var(--muted);
-      border:1px solid var(--line); border-radius:999px; padding:9px 12px;
-      background:rgba(255,255,255,.02);
-    }
-
-    @media (max-width: 960px){
-      .hero-grid,.trust,.contact,.grid-3,.grid-2{
-        grid-template-columns:1fr;
-      }
-      .nav{
-        flex-wrap:wrap; padding:10px 0 14px;
-      }
-      .nav-links{
-        width:100%; order:3;
-      }
-      .mini-points,.stats-grid{
-        grid-template-columns:1fr 1fr;
-      }
-    }
-
     @media (max-width: 640px){
-      .wrap{width:min(var(--max), calc(100% - 20px))}
-      .hero{padding-top:26px}
-      .hero-card,.stats-card,.callout,.card,.contact-card{padding:20px}
-      .mini-points,.stats-grid{
-        grid-template-columns:1fr;
-      }
-      .hero-actions{
-        flex-direction:column;
-      }
-      .btn,.nav-cta,.floating a{
-        width:100%;
-      }
-      .floating{
-        left:10px; right:10px; bottom:10px;
-      }
-      .floating a{
-        min-width:0;
-      }
-      .section-head{
-        flex-direction:column; align-items:start;
-      }
+      .actions{flex-direction:column}
+      .btn,.nav-btn,.floating a{width:100%}
+      .floating{left:10px; right:10px; bottom:10px}
+      .stats-grid{grid-template-columns:1fr}
+      .section-head{flex-direction:column; align-items:start}
     }
   </style>
   <script type="application/ld+json">
@@ -339,22 +382,24 @@
     "@context":"https://schema.org",
     "@type":"ComputerRepair",
     "name":"MM PC Servis",
-    "description":"Popravak računala i laptopa u Čitluku i Mostaru. Instalacija Windowsa, uklanjanje virusa, SSD upgrade, čišćenje laptopa i spašavanje podataka.",
     "telephone":"+38763568492",
-    "areaServed":["Čitluk","Mostar","Međugorje","Čapljina","Široki Brijeg"],
+    "email":"mmpcserv@gmail.com",
+    "url":"https://USERNAME.github.io/REPOSITORY/",
+    "sameAs":["https://www.instagram.com/mmpcservis"],
     "address":{
       "@type":"PostalAddress",
       "addressLocality":"Čitluk / Mostar",
       "addressCountry":"BA"
     },
-    "url":"https://mmpcservis.github.io/mmpcservis/",
+    "areaServed":["Čitluk","Mostar","Međugorje","Čapljina","Široki Brijeg"],
     "serviceType":[
+      "Popravak računala",
+      "Popravak laptopa",
       "Instalacija Windowsa",
-      "Uklanjanje virusa",
       "SSD upgrade",
       "Čišćenje laptopa",
-      "Spašavanje podataka",
-      "Popravak računala i laptopa"
+      "Uklanjanje virusa",
+      "Spašavanje podataka"
     ]
   }
   </script>
@@ -362,94 +407,66 @@
 <body>
   <header class="topbar">
     <div class="wrap nav">
-      <a href="#top" class="brand">
-        <span class="brand-badge">MM</span>
+      <a class="brand" href="#top">
+        <span class="brand-mark">MM</span>
         <span>MM PC Servis</span>
       </a>
-
       <nav class="nav-links">
-        <a href="#usluge">Usluge</a>
         <a href="#problemi">Problemi</a>
-        <a href="#zasto-mi">Zašto mi</a>
+        <a href="#usluge">Usluge</a>
+        <a href="#tech">Tech pristup</a>
         <a href="#faq">FAQ</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
-
-      <a class="nav-cta" href="tel:+38763568492">Nazovi: +387 63 568 492</a>
+      <a class="nav-btn" href="tel:+38763568492">📞 +387 63 568 492</a>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div class="hero-card">
-          <div class="eyebrow">⚡ Brz servis • Čitluk / Mostar</div>
-          <h1>Računalo zeza?<br>Laptop spor?<br>Riješimo to brzo.</h1>
+        <div class="glass hero-main">
+          <div class="eyebrow">⚡ Gaming / Tech Edition • GitHub Pages Ready</div>
+          <h1><span class="glow">Dark tech vibe.</span><br>Brz servis.<br>Jači prvi dojam.</h1>
           <p class="lead">
-            MM PC Servis nudi brz i pouzdan popravak računala i laptopa:
-            instalacija Windowsa, uklanjanje virusa, SSD upgrade, čišćenje laptopa,
-            optimizacija sustava i spašavanje podataka.
+            Ovo je agresivnija gaming / tech verzija za MM PC Servis. Zadržava ozbiljan servisni ton,
+            ali vizualno djeluje modernije, “jače” i skuplje. Idealno ako želiš da sajt izgleda više
+            kao premium tech brand nego klasična lokalna servis stranica.
           </p>
-
-          <div class="hero-actions">
+          <div class="actions">
             <a class="btn btn-primary" href="tel:+38763568492">📞 Pozovi odmah</a>
             <a class="btn btn-secondary" href="https://wa.me/38763568492" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:mmpcserv@gmail.com">✉️ Email</a>
           </div>
-
           <div class="badge-row">
             <span class="badge">Besplatna dijagnostika kod većine popravaka</span>
             <span class="badge">Radimo i vikendom po dogovoru</span>
-            <span class="badge">Čitluk • Mostar • Međugorje</span>
-          </div>
-
-          <div class="mini-points">
-            <div class="mini">
-              <strong>Windows problemi</strong>
-              Instalacija, errori, pad sustava i usporen rad.
-            </div>
-            <div class="mini">
-              <strong>Hardverski kvarovi</strong>
-              RAM, SSD, disk, hlađenje i osnovna dijagnostika.
-            </div>
-            <div class="mini">
-              <strong>Ubrzanje računala</strong>
-              SSD upgrade i optimizacija za osjetno brži rad.
-            </div>
+            <span class="badge">Instagram: @mmpcservis</span>
           </div>
         </div>
 
-        <div class="right-stack">
-          <div class="hero-card stats-card">
-            <div class="section-head" style="margin-bottom:14px">
-              <h2 style="font-size:1.3rem">Zašto ljudi zovu baš nas</h2>
-            </div>
+        <div class="hero-side">
+          <div class="glass hero-side-card">
+            <h3>Zašto ova verzija udara jače</h3>
             <div class="stats-grid">
-              <div class="stat">
-                <b>Brza procjena</b>
-                <span>Odmah znaš ima li popravak smisla.</span>
-              </div>
-              <div class="stat">
-                <b>Pošten pristup</b>
-                <span>Kažemo isplati li se popravljati ili ne.</span>
-              </div>
-              <div class="stat">
-                <b>Lokalni servis</b>
-                <span>Čitluk / Mostar i okolica.</span>
-              </div>
-              <div class="stat">
-                <b>Bez komplikacije</b>
-                <span>Nazoveš, dogovoriš, riješiš problem.</span>
-              </div>
+              <div class="stat"><b>Gaming hover efekti</b><span>Jači premium tech osjećaj bez težine sajta.</span></div>
+              <div class="stat"><b>Vizualni glow</b><span>Odmah izgleda skuplje i modernije.</span></div>
+              <div class="stat"><b>Jasni CTA gumbi</b><span>Telefon, WhatsApp i email su odmah ispred korisnika.</span></div>
+              <div class="stat"><b>1 file deploy</b><span>Samo zamijeni postojeći index.html.</span></div>
             </div>
           </div>
 
-          <div class="hero-card callout">
-            <h3>Hitno ti treba računalo za posao?</h3>
-            <p>
-              Ako ti laptop šteka, pregrijava se ili Windows ne radi kako treba,
-              javi se odmah. Cilj je da što prije opet imaš funkcionalan stroj.
-            </p>
-            <a class="btn btn-primary" href="#kontakt">Zatraži kontakt</a>
+          <div class="glass hero-side-card code-panel">
+            <h3>Servisna logika</h3>
+            <p>Stil je jači, ali sadržaj je i dalje jasan i prodajan.</p>
+            <div class="terminal">
+              <div><span class="accent">$</span> scan --device laptop</div>
+              <div><span class="good">✔</span> slow boot / overheating / unstable system</div>
+              <div><span class="accent">$</span> fix --priority</div>
+              <div><span class="warn">→</span> windows install / SSD upgrade / cleaning</div>
+              <div><span class="accent">$</span> contact --best</div>
+              <div><span class="good">✔</span> +387 63 568 492</div>
+            </div>
           </div>
         </div>
       </div>
@@ -458,35 +475,16 @@
     <section id="problemi">
       <div class="wrap">
         <div class="section-head">
-          <h2>Najčešći problemi koje rješavamo</h2>
-          <p>Ovo su stvari zbog kojih nas ljudi najčešće zovu. Ako ti se računalo ponaša ovako, vrlo vjerojatno možemo pomoći.</p>
+          <h2>Najčešći problemi</h2>
+          <p>SEO i korisnička jasnoća ostaju jaki i u ovoj agresivnijoj verziji.</p>
         </div>
-
         <div class="grid-3">
-          <article class="card problem">
-            <h3>Laptop spor ili se smrzava</h3>
-            <p>Tipično rješenje je čišćenje sustava, SSD upgrade ili optimizacija Windowsa.</p>
-          </article>
-          <article class="card problem">
-            <h3>Računalo se ne pali</h3>
-            <p>Dijagnostika napajanja, RAM-a, diska i osnovnih komponenti.</p>
-          </article>
-          <article class="card problem">
-            <h3>Windows se ne pokreće</h3>
-            <p>Instalacija ili popravak sustava, backup i povrat funkcionalnosti.</p>
-          </article>
-          <article class="card problem">
-            <h3>Laptop se pregrijava</h3>
-            <p>Čišćenje ventilatora, zamjena termalne paste i smanjenje temperature rada.</p>
-          </article>
-          <article class="card problem">
-            <h3>Virus ili malware</h3>
-            <p>Uklanjanje zlonamjernog softvera i osnovna sigurnosna optimizacija.</p>
-          </article>
-          <article class="card problem">
-            <h3>Računalo je staro i presporo</h3>
-            <p>Najčešće ga je moguće osjetno ubrzati bez kupnje novog računala.</p>
-          </article>
+          <article class="glass card problem"><h3>Laptop spor ili se smrzava</h3><p>Optimizacija Windowsa, SSD upgrade i čišćenje sustava često rješavaju problem.</p></article>
+          <article class="glass card problem"><h3>Računalo se ne pali</h3><p>Osnovna dijagnostika napajanja, RAM-a, diska i drugih ključnih komponenti.</p></article>
+          <article class="glass card problem"><h3>Windows se ne pokreće</h3><p>Instalacija ili oporavak sustava kako bi računalo opet bilo spremno za rad.</p></article>
+          <article class="glass card problem"><h3>Laptop se pregrijava</h3><p>Čišćenje ventilatora i zamjena termalne paste za stabilniji i hladniji rad.</p></article>
+          <article class="glass card problem"><h3>Virus ili malware</h3><p>Uklanjanje zlonamjernog softvera i sređivanje sustava za sigurniji rad.</p></article>
+          <article class="glass card problem"><h3>Staro računalo je presporo</h3><p>Vrlo često se može osjetno ubrzati bez kupnje potpuno novog računala.</p></article>
         </div>
       </div>
     </section>
@@ -495,170 +493,116 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Usluge</h2>
-          <p>Jasne i tražene usluge koje korisnici odmah razumiju. Bez praznih fraza i bez komplikacije.</p>
+          <p>Čiste, konkretne i napisane da djeluju ozbiljno, bez generičkog filler teksta.</p>
         </div>
-
         <div class="grid-3">
-          <article class="card">
-            <h3>Instalacija Windowsa</h3>
-            <p>Svježa instalacija, osnovno podešavanje i priprema računala za rad.</p>
-            <ul class="list">
-              <li>Čist i stabilan sustav</li>
-              <li>Manje bugova i usporavanja</li>
-              <li>Brži start računala</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Uklanjanje virusa</h3>
-            <p>Čišćenje malwarea, sumnjivih programa i nepotrebnog opterećenja sustava.</p>
-            <ul class="list">
-              <li>Sigurniji rad</li>
-              <li>Manje štekanja</li>
-              <li>Bolja stabilnost</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>SSD upgrade</h3>
-            <p>Jedan od najboljih omjera uloženog i dobivenog za brži laptop ili PC.</p>
-            <ul class="list">
-              <li>Brže paljenje sustava</li>
-              <li>Brže otvaranje programa</li>
-              <li>Osjetno bolji osjećaj rada</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Čišćenje laptopa</h3>
-            <p>Servis hlađenja i zamjena termalne paste za niže temperature i tiši rad.</p>
-            <ul class="list">
-              <li>Manje pregrijavanje</li>
-              <li>Stabilniji rad</li>
-              <li>Manji rizik od gašenja</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Spašavanje podataka</h3>
-            <p>Kada je moguće, pokušava se spasiti bitan sadržaj s diska ili sustava.</p>
-            <ul class="list">
-              <li>Dokumenti</li>
-              <li>Slike i video</li>
-              <li>Osnovni backup</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Popravak računala i laptopa</h3>
-            <p>Osnovna dijagnostika i zamjena komponenti kada je kvar hardverske prirode.</p>
-            <ul class="list">
-              <li>RAM, SSD, disk</li>
-              <li>Napajanje i hlađenje</li>
-              <li>Provjera isplativosti popravka</li>
-            </ul>
-          </article>
+          <article class="glass card"><h3>Instalacija Windowsa</h3><p>Čista instalacija i osnovno podešavanje za stabilniji i brži rad.</p><ul class="list"><li>Brže pokretanje</li><li>Čist sustav</li><li>Manje bugova</li></ul></article>
+          <article class="glass card"><h3>Uklanjanje virusa</h3><p>Čišćenje malwarea, sumnjivih aplikacija i nepotrebnog opterećenja.</p><ul class="list"><li>Sigurniji rad</li><li>Više stabilnosti</li><li>Bolji performans</li></ul></article>
+          <article class="glass card"><h3>SSD upgrade</h3><p>Jedna od najisplativijih nadogradnji za laptop ili desktop računalo.</p><ul class="list"><li>Brži boot</li><li>Brži programi</li><li>Osjetno bolji osjećaj rada</li></ul></article>
+          <article class="glass card"><h3>Čišćenje laptopa</h3><p>Servis hlađenja i termalne paste radi nižih temperatura i stabilnijeg rada.</p><ul class="list"><li>Manje pregrijavanje</li><li>Tiši rad</li><li>Dulja stabilnost</li></ul></article>
+          <article class="glass card"><h3>Spašavanje podataka</h3><p>Kad je moguće, pokušava se sačuvati ono što je korisniku najvrjednije.</p><ul class="list"><li>Dokumenti</li><li>Fotografije i video</li><li>Osnovni backup</li></ul></article>
+          <article class="glass card"><h3>Popravak računala i laptopa</h3><p>Dijagnostika, zamjena komponenti i procjena isplati li se popravak.</p><ul class="list"><li>RAM, SSD, HDD</li><li>Napajanje i hlađenje</li><li>Pošten savjet</li></ul></article>
         </div>
       </div>
     </section>
 
-    <section id="zasto-mi">
-      <div class="wrap trust">
-        <div class="card">
-          <div class="section-head" style="margin-bottom:12px">
-            <h2>Zašto izabrati MM PC Servis</h2>
-          </div>
-          <ul class="list" style="margin-top:0">
-            <li>Brza dijagnostika i jasan prijedlog rješenja</li>
-            <li>Pošten savjet oko toga isplati li se popravak</li>
-            <li>Povoljniji pristup od impulzivne kupnje novog računala</li>
-            <li>Fokus na realno ubrzanje i funkcionalnost</li>
-            <li>Lokalna usluga za Čitluk, Mostar i okolna mjesta</li>
-            <li>Jednostavan kontakt telefonom ili WhatsAppom</li>
+    <section id="tech">
+      <div class="wrap tech-strip">
+        <div class="glass map-card">
+          <h3>Local SEO + Google Maps</h3>
+          <p>Ovaj blok i dalje čuva lokalnu optimizaciju za <strong>PC servis Čitluk</strong>, <strong>PC servis Mostar</strong>, <strong>popravak laptopa Mostar</strong> i <strong>instalacija Windowsa Čitluk</strong>.</p>
+          <ul class="list">
+            <li>Čitluk</li><li>Mostar</li><li>Međugorje</li><li>Čapljina</li><li>Široki Brijeg</li>
           </ul>
+          <div class="map-box">
+            <iframe title="Google mapa MM PC Servis" src="https://www.google.com/maps?q=%C4%8Citluk%20Bosnia%20and%20Herzegovina&z=11&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
 
-        <div class="card">
-          <div class="section-head" style="margin-bottom:12px">
-            <h2>Područje usluge</h2>
+        <div class="glass seo-card">
+          <h3>Gaming / tech balans</h3>
+          <p>Vizual sada izgleda agresivnije i modernije, ali stranica i dalje radi ono najvažnije: vodi korisnika ravno prema kontaktu.</p>
+          <div class="terminal">
+            <div><span class="accent">$</span> style --mode aggressive-tech</div>
+            <div><span class="good">✔</span> neon gradients / hover lift / glowing headline</div>
+            <div><span class="accent">$</span> contacts --channels</div>
+            <div><span class="good">✔</span> phone / whatsapp / email / instagram</div>
+            <div><span class="accent">$</span> deploy --github-pages</div>
+            <div><span class="good">✔</span> replace existing index.html only</div>
           </div>
-          <p>MM PC Servis pokriva područje:</p>
-          <div class="badge-row">
-            <span class="badge">Čitluk</span>
-            <span class="badge">Mostar</span>
-            <span class="badge">Međugorje</span>
-            <span class="badge">Čapljina</span>
-            <span class="badge">Široki Brijeg</span>
-          </div>
-          <p style="margin-top:18px; color:var(--muted)">
-            Ako tražiš pouzdan PC servis u Čitluku ili Mostaru za spor laptop,
-            Windows problem, SSD upgrade ili čišćenje računala — javi se.
-          </p>
         </div>
       </div>
     </section>
 
     <section id="faq">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Česta pitanja</h2>
-          <p>Kratki odgovori na ono što korisnike najčešće zanima prije nego nazovu.</p>
+      <div class="wrap grid-2">
+        <div class="glass card">
+          <div class="section-head" style="margin-bottom:12px">
+            <h2>FAQ</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Radite li vikendom?</summary>
+              <p>Da, po dogovoru. To je ostavljeno kao jasan benefit jer ljudima često baš to presudi da ti se jave.</p>
+            </details>
+            <details>
+              <summary>Isplati li se SSD upgrade starijeg laptopa?</summary>
+              <p>U velikom broju slučajeva da. SSD upgrade je često najisplativija nadogradnja za brži rad i kraće paljenje sustava.</p>
+            </details>
+            <details>
+              <summary>Radite li instalaciju Windowsa i uklanjanje virusa?</summary>
+              <p>Da. To su među najtraženijim uslugama, uz čišćenje laptopa, osnovnu optimizaciju i dijagnostiku hardvera.</p>
+            </details>
+            <details>
+              <summary>Može li se staro računalo ubrzati bez kupnje novog?</summary>
+              <p>Vrlo često može. Ovisno o stanju uređaja, kombinacija SSD-a, čišćenja i optimizacije zna dati veliko poboljšanje.</p>
+            </details>
+          </div>
         </div>
 
-        <div class="faq">
-          <details>
-            <summary>Radite li besplatnu dijagnostiku?</summary>
-            <p>Možeš koristiti formulaciju: besplatna dijagnostika kod većine popravaka. To je dobar marketinški trigger i zvuči jasno korisniku.</p>
-          </details>
-          <details>
-            <summary>Isplati li se ubrzavati stariji laptop?</summary>
-            <p>Vrlo često da. SSD upgrade i osnovna optimizacija mogu dati veliko poboljšanje bez kupnje novog uređaja.</p>
-          </details>
-          <details>
-            <summary>Radite li instalaciju Windowsa i uklanjanje virusa?</summary>
-            <p>Da. To su među najčešćim uslugama, uz čišćenje laptopa, optimizaciju i osnovne hardverske zamjene.</p>
-          </details>
-          <details>
-            <summary>Radite li vikendom?</summary>
-            <p>Da, po dogovoru. To slobodno naglašavaj jer ljudima često baš to znači kod odluke da nazovu.</p>
-          </details>
+        <div class="glass card">
+          <div class="section-head" style="margin-bottom:12px">
+            <h2>Instagram i dodatni kontakt</h2>
+          </div>
+          <p>Dodani su svi kontakti i zadržan je tamni gaming / tech vibe.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="https://www.instagram.com/mmpcservis" target="_blank" rel="noopener noreferrer"><span>📸 Instagram</span><span>@mmpcservis</span></a>
+            <a class="contact-link" href="mailto:mmpcserv@gmail.com"><span>✉️ Email</span><span>mmpcserv@gmail.com</span></a>
+            <a class="contact-link" href="https://wa.me/38763568492" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp</span><span>Pošalji poruku</span></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="kontakt">
       <div class="wrap grid-2">
-        <div class="card seo-block">
-          <div class="section-head" style="margin-bottom:12px">
-            <h2>SEO blok</h2>
+        <div class="glass contact-card">
+          <h3>Kontakt</h3>
+          <p>Najbrži put do dogovora je poziv ili WhatsApp poruka.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="tel:+38763568492"><span>📞 Telefon</span><span>+387 63 568 492</span></a>
+            <a class="contact-link" href="mailto:mmpcserv@gmail.com"><span>✉️ Email</span><span>mmpcserv@gmail.com</span></a>
+            <a class="contact-link" href="https://www.instagram.com/mmpcservis" target="_blank" rel="noopener noreferrer"><span>📸 Instagram</span><span>@mmpcservis</span></a>
+            <a class="contact-link" href="https://wa.me/38763568492" target="_blank" rel="noopener noreferrer"><span>💬 WhatsApp</span><span>Brza poruka</span></a>
           </div>
-          <p>
-            PC servis Čitluk • PC servis Mostar • popravak laptopa Mostar •
-            instalacija Windowsa Čitluk • SSD upgrade Mostar • čišćenje laptopa Hercegovina
-          </p>
-          <p style="margin-top:14px">
-            Ako tražiš pouzdan servis za računalo ili laptop u Čitluku i Mostaru,
-            MM PC Servis nudi instalaciju Windowsa, uklanjanje virusa, SSD upgrade,
-            čišćenje laptopa i osnovni popravak računala.
-          </p>
         </div>
 
-        <div class="card" id="kontakt">
-          <div class="section-head" style="margin-bottom:12px">
-            <h2>Kontakt</h2>
-          </div>
-          <p>Najbrži način je poziv ili WhatsApp poruka.</p>
-          <div class="phone">+387 63 568 492</div>
-          <div class="hero-actions" style="margin-bottom:8px">
-            <a class="btn btn-primary" href="tel:+38763568492">📞 Nazovi</a>
-            <a class="btn btn-secondary" href="https://wa.me/38763568492" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-          </div>
-          <ul class="contact-list">
-            <li><strong>Područje:</strong> Čitluk / Mostar</li>
-            <li><strong>Dostupnost:</strong> Po dogovoru, uključujući vikend</li>
-            <li><strong>Tip usluge:</strong> Popravak računala i laptopa, optimizacija i upgrade</li>
+        <div class="glass contact-card">
+          <h3>SEO blok</h3>
+          <p>MM PC Servis je lokalni servis za računala i laptope u Čitluku i Mostaru. Nudimo instalaciju Windowsa, uklanjanje virusa, SSD upgrade, čišćenje laptopa i osnovni popravak računala.</p>
+          <ul class="list">
+            <li>PC servis Čitluk</li>
+            <li>PC servis Mostar</li>
+            <li>Popravak laptopa Mostar</li>
+            <li>Instalacija Windowsa Čitluk</li>
+            <li>SSD upgrade Mostar</li>
           </ul>
         </div>
       </div>
     </section>
 
     <div class="wrap footer">
-      MM PC Servis • GitHub Pages ready • 1 HTML file • Bez plaćanja hostinga
+      MM PC Servis • Gaming / Tech verzija • Samo zamijeni postojeći index.html
     </div>
   </main>
 
