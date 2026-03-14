@@ -4,365 +4,178 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MM PC Servis | Gaming Tech Edition | Čitluk / Mostar</title>
-  <meta name="description" content="MM PC Servis - gaming tech verzija web stranice za popravak računala i laptopa u Čitluku i Mostaru. Instalacija Windowsa, uklanjanje virusa, SSD upgrade, čišćenje laptopa i spašavanje podataka." />
-  <meta name="keywords" content="MM PC Servis, PC servis Čitluk, PC servis Mostar, gaming tech servis, popravak laptopa Mostar, instalacija Windowsa Čitluk, SSD upgrade Mostar" />
+  <meta name="description" content="MM PC Servis - popravak računala i laptopa u Čitluku i Mostaru. Instalacija Windowsa, uklanjanje virusa, SSD upgrade, čišćenje laptopa i spašavanje podataka." />
+  <meta name="keywords" content="MM PC Servis, PC servis Čitluk, PC servis Mostar, popravak laptopa Mostar, instalacija Windowsa Čitluk, SSD upgrade Mostar" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#05070d" />
   <meta property="og:title" content="MM PC Servis | Gaming Tech Edition" />
-  <meta property="og:description" content="Gaming / tech stil za servis računala i laptopa. Nazovi: +387 63 568 492" />
+  <meta property="og:description" content="Popravak računala i laptopa. Nazovi: +387 63 568 492" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="hr_HR" />
   <style>
     :root{
-      --bg:#05070d;
-      --bg2:#0a1020;
-      --panel:#0b1220cc;
-      --panel2:#0d1629;
-      --text:#f7fbff;
-      --muted:#b8c4e0;
-      --muted2:#8aa0c5;
-      --cyan:#44e3ff;
-      --violet:#8a5cff;
-      --green:#2dffb2;
-      --pink:#ff5ccf;
-      --line:rgba(255,255,255,.08);
-      --radius:26px;
-      --shadow:0 24px 80px rgba(0,0,0,.45);
-      --max:1180px;
+      --bg:#05070d; --bg2:#0a1020; --panel:#0b1220cc; --text:#f7fbff;
+      --muted:#b8c4e0; --muted2:#8aa0c5; --cyan:#44e3ff; --violet:#8a5cff;
+      --green:#2dffb2; --line:rgba(255,255,255,.08); --radius:26px;
+      --shadow:0 24px 80px rgba(0,0,0,.45); --max:1180px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      color:var(--text);
-      font-family:Inter,Segoe UI,Arial,sans-serif;
+      margin:0; color:var(--text); font-family:Inter,Segoe UI,Arial,sans-serif;
       background:
         radial-gradient(circle at 10% 0%, rgba(68,227,255,.14), transparent 20%),
         radial-gradient(circle at 90% 10%, rgba(138,92,255,.16), transparent 22%),
         radial-gradient(circle at 50% 100%, rgba(45,255,178,.08), transparent 18%),
         linear-gradient(180deg, #04060b 0%, #09101d 100%);
-      line-height:1.6;
-      overflow-x:hidden;
+      line-height:1.6; overflow-x:hidden;
     }
-
     body::before{
-      content:"";
-      position:fixed; inset:0; pointer-events:none; z-index:0;
+      content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
       background-image:
         linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
       background-size:32px 32px;
       mask-image:radial-gradient(circle at center, rgba(0,0,0,.7), transparent 85%);
     }
-
     a{color:inherit;text-decoration:none}
     .wrap{width:min(var(--max), calc(100% - 28px)); margin:auto; position:relative; z-index:1}
-
     .glass{
       background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
-      position:relative;
-      overflow:hidden;
+      border:1px solid var(--line); box-shadow:var(--shadow); backdrop-filter:blur(12px);
+      position:relative; overflow:hidden;
     }
-
     .glass::after{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius:inherit;
-      padding:1px;
+      content:""; position:absolute; inset:-1px; border-radius:inherit; padding:1px;
       background:linear-gradient(135deg, rgba(68,227,255,.35), rgba(138,92,255,.22), rgba(45,255,178,.18));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite:xor;
-              mask-composite:exclude;
-      pointer-events:none;
-      opacity:.55;
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; opacity:.55;
     }
-
     .topbar{
-      position:sticky; top:0; z-index:90;
-      background:rgba(5,7,13,.72);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(255,255,255,.07);
+      position:sticky; top:0; z-index:90; background:rgba(5,7,13,.72);
+      backdrop-filter:blur(16px); border-bottom:1px solid rgba(255,255,255,.07);
     }
-
-    .nav{
-      min-height:76px;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-    }
-
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight:900; letter-spacing:.2px;
-    }
-
+    .nav{min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.2px}
     .brand-mark{
-      width:46px; height:46px; border-radius:16px;
-      display:grid; place-items:center;
-      color:#051018;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      box-shadow:0 0 0 1px rgba(255,255,255,.07), 0 12px 40px rgba(68,227,255,.2);
-      font-weight:900;
+      width:46px; height:46px; border-radius:16px; display:grid; place-items:center;
+      color:#051018; background:linear-gradient(135deg, var(--cyan), var(--violet));
+      box-shadow:0 0 0 1px rgba(255,255,255,.07), 0 12px 40px rgba(68,227,255,.2); font-weight:900;
     }
-
-    .nav-links{
-      display:flex; flex-wrap:wrap; gap:18px;
-      color:var(--muted2); font-size:.95rem;
-    }
+    .nav-links{display:flex; flex-wrap:wrap; gap:18px; color:var(--muted2); font-size:.95rem}
     .nav-links a:hover{color:var(--text)}
-
     .nav-btn,.btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       min-height:52px; padding:0 18px; border-radius:999px; font-weight:900;
       transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
     }
     .nav-btn:hover,.btn:hover{transform:translateY(-2px)}
-    .nav-btn{
-      color:#06111a;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      box-shadow:0 18px 40px rgba(68,227,255,.18);
-    }
-
+    .nav-btn{color:#06111a; background:linear-gradient(135deg, var(--cyan), var(--violet)); box-shadow:0 18px 40px rgba(68,227,255,.18)}
     .hero{padding:58px 0 24px}
-    .hero-grid{
-      display:grid; grid-template-columns:1.08fr .92fr; gap:20px;
-      align-items:stretch;
-    }
-
-    .hero-main,.hero-side-card,.card,.contact-card,.map-card,.seo-card{
-      border-radius:var(--radius);
-    }
-
-    .hero-main{
-      padding:38px;
-      isolation:isolate;
-    }
-
+    .hero-grid{display:grid; grid-template-columns:1.08fr .92fr; gap:20px; align-items:stretch}
+    .hero-main,.hero-side-card,.card,.contact-card,.map-card,.seo-card{border-radius:var(--radius)}
+    .hero-main{padding:38px; isolation:isolate}
     .hero-main::before{
-      content:"";
-      position:absolute; width:420px; height:420px; right:-120px; bottom:-180px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(68,227,255,.24), transparent 62%);
-      filter:blur(10px);
-      animation:pulse 6s ease-in-out infinite;
-      z-index:-1;
+      content:""; position:absolute; width:420px; height:420px; right:-120px; bottom:-180px;
+      border-radius:50%; background:radial-gradient(circle, rgba(68,227,255,.24), transparent 62%);
+      filter:blur(10px); animation:pulse 6s ease-in-out infinite; z-index:-1;
     }
-
     .hero-main::after{
-      content:"";
-      position:absolute; width:300px; height:300px; left:-120px; top:-140px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(138,92,255,.18), transparent 62%);
-      filter:blur(10px);
-      animation:pulse 7s ease-in-out infinite reverse;
-      z-index:-1;
+      content:""; position:absolute; width:300px; height:300px; left:-120px; top:-140px;
+      border-radius:50%; background:radial-gradient(circle, rgba(138,92,255,.18), transparent 62%);
+      filter:blur(10px); animation:pulse 7s ease-in-out infinite reverse; z-index:-1;
     }
-
-    @keyframes pulse{
-      0%,100%{transform:scale(1)}
-      50%{transform:scale(1.08)}
-    }
-
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
     .eyebrow{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:999px;
-      color:#dff9ff; font-weight:800; font-size:.9rem;
-      border:1px solid rgba(68,227,255,.18);
-      background:rgba(68,227,255,.08);
-      margin-bottom:18px;
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
+      color:#dff9ff; font-weight:800; font-size:.9rem; border:1px solid rgba(68,227,255,.18);
+      background:rgba(68,227,255,.08); margin-bottom:18px;
     }
-
-    h1{
-      margin:0 0 14px;
-      font-size:clamp(2.3rem, 5vw, 4.6rem);
-      line-height:1.01; letter-spacing:-.04em;
-    }
-
+    h1{margin:0 0 14px; font-size:clamp(2.3rem, 5vw, 4.6rem); line-height:1.01; letter-spacing:-.04em}
     .glow{
       background:linear-gradient(135deg, var(--cyan), #c7f7ff 35%, var(--violet) 75%);
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
+      -webkit-background-clip:text; background-clip:text; color:transparent;
     }
-
-    .lead{
-      margin:0 0 22px;
-      color:var(--muted);
-      max-width:62ch;
-      font-size:1.08rem;
-    }
-
+    .lead{margin:0 0 22px; color:var(--muted); max-width:62ch; font-size:1.08rem}
     .actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px}
-    .btn-primary{
-      color:#06111a;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-      box-shadow:0 20px 40px rgba(68,227,255,.18);
-    }
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-    }
-
-    .badge-row{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;
-    }
-    .badge{
-      padding:9px 12px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.025);
-      color:var(--muted);
-      font-size:.9rem;
-    }
-
+    .btn-primary{color:#06111a; background:linear-gradient(135deg, var(--cyan), var(--violet)); box-shadow:0 20px 40px rgba(68,227,255,.18)}
+    .btn-secondary{border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:var(--text)}
+    .badge-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .badge{padding:9px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.025); color:var(--muted); font-size:.9rem}
     .hero-side{display:grid; gap:18px}
     .hero-side-card{padding:24px}
-
-    .stats-grid{
-      display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;
-      margin-top:10px;
-    }
-
-    .stat{
-      padding:16px; border-radius:18px;
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
+    .stats-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:10px}
+    .stat,.card,.contact-link{
       transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     }
-    .stat:hover,.card:hover,.contact-link:hover{
-      transform:translateY(-3px);
-      border-color:rgba(68,227,255,.25);
-      box-shadow:0 18px 40px rgba(68,227,255,.08);
+    .stat{
+      padding:16px; border-radius:18px; border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
     }
+    .stat:hover,.card:hover,.contact-link:hover{transform:translateY(-3px); border-color:rgba(68,227,255,.25); box-shadow:0 18px 40px rgba(68,227,255,.08)}
     .stat b{display:block; margin-bottom:6px; font-size:1.08rem}
     .stat span{color:var(--muted2); font-size:.94rem}
-
     section{padding:20px 0}
-    .section-head{
-      display:flex; justify-content:space-between; gap:16px; align-items:end;
-      margin-bottom:16px;
-    }
+    .section-head{display:flex; justify-content:space-between; gap:16px; align-items:end; margin-bottom:16px}
     .section-head h2{margin:0; font-size:clamp(1.65rem, 3vw, 2.35rem); letter-spacing:-.02em}
     .section-head p{margin:0; color:var(--muted2); max-width:60ch}
-
     .grid-3,.grid-2{display:grid; gap:16px}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-
-    .card,.contact-card,.map-card,.seo-card{padding:24px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease}
+    .card,.contact-card,.map-card,.seo-card{padding:24px}
     .card h3,.contact-card h3,.map-card h3,.seo-card h3{margin:0 0 8px}
     .card p,.contact-card p,.map-card p,.seo-card p{margin:0; color:var(--muted)}
     .problem{border-left:3px solid var(--cyan)}
-
-    .list{
-      list-style:none; padding:0; margin:14px 0 0;
-      display:grid; gap:10px;
-    }
-    .list li{
-      position:relative; padding-left:26px; color:var(--muted);
-    }
-    .list li::before{
-      content:"✓"; position:absolute; left:0; top:0;
-      color:var(--green); font-weight:900;
-    }
-
-    .tech-strip{
-      display:grid; grid-template-columns:1.1fr .9fr; gap:16px;
-    }
-
+    .list{list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+    .list li{position:relative; padding-left:26px; color:var(--muted)}
+    .list li::before{content:"✓"; position:absolute; left:0; top:0; color:var(--green); font-weight:900}
+    .tech-strip{display:grid; grid-template-columns:1.1fr .9fr; gap:16px}
     .code-panel{
       border:1px solid rgba(68,227,255,.16);
-      background:
-        linear-gradient(180deg, rgba(68,227,255,.07), rgba(138,92,255,.05)),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.016));
+      background:linear-gradient(180deg, rgba(68,227,255,.07), rgba(138,92,255,.05)), linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.016));
     }
-
     .terminal{
-      margin-top:14px;
-      padding:16px; border-radius:18px;
-      background:#08111f;
-      border:1px solid rgba(138,92,255,.14);
-      font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      color:#d2dcff; font-size:.95rem; overflow:auto;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.02);
+      margin-top:14px; padding:16px; border-radius:18px; background:#08111f;
+      border:1px solid rgba(138,92,255,.14); font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color:#d2dcff; font-size:.95rem; overflow:auto; box-shadow:inset 0 1px 0 rgba(255,255,255,.02);
     }
-    .terminal .good{color:#8cf7d0}
-    .terminal .accent{color:#9adfff}
-    .terminal .warn{color:#ffd1a8}
-
+    .terminal .good{color:#8cf7d0}.terminal .accent{color:#9adfff}.terminal .warn{color:#ffd1a8}
     .faq-list{display:grid; gap:12px}
     details{
-      border-radius:18px; padding:18px;
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018));
-      transition:border-color .18s ease, transform .18s ease;
+      border-radius:18px; padding:18px; border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018)); transition:border-color .18s ease, transform .18s ease;
     }
     details:hover{border-color:rgba(68,227,255,.2)}
     summary{
-      cursor:pointer; font-weight:900; list-style:none;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      cursor:pointer; font-weight:900; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
     summary::-webkit-details-marker{display:none}
-    summary::after{
-      content:"+";
-      color:var(--cyan);
-      font-size:1.2rem; font-weight:900;
-      transition:transform .15s ease;
-    }
+    summary::after{content:"+"; color:var(--cyan); font-size:1.2rem; font-weight:900}
     details[open]{transform:translateY(-2px)}
     details[open] summary::after{content:"–"}
     details p{display:none}
     details[open] p{display:block; margin:12px 0 0; color:var(--muted)}
-
     .map-box{
-      border-radius:20px; overflow:hidden; margin-top:14px;
-      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px; overflow:hidden; margin-top:14px; border:1px solid rgba(255,255,255,.08);
       min-height:300px; background:#08101f;
     }
-    .map-box iframe{
-      width:100%; height:300px; border:0; display:block;
-      filter:grayscale(.22) saturate(.95) contrast(1.04);
-    }
-
-    .contact-links{
-      display:grid; gap:10px; margin-top:14px;
-    }
+    .map-box iframe{width:100%; height:300px; border:0; display:block; filter:grayscale(.22) saturate(.95) contrast(1.04)}
+    .contact-links{display:grid; gap:10px; margin-top:14px}
     .contact-link{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:14px 16px; border-radius:16px;
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.016));
-      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+      display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border-radius:16px;
+      border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.016));
     }
     .contact-link span:last-child{color:var(--muted2); font-size:.94rem}
-
-    .footer{
-      text-align:center; color:var(--muted2);
-      font-size:.92rem; padding:26px 0 106px;
-    }
-
+    .footer{text-align:center; color:var(--muted2); font-size:.92rem; padding:26px 0 106px}
     .floating{
-      position:fixed; right:14px; bottom:14px; z-index:95;
-      display:flex; flex-direction:column; gap:10px;
+      position:fixed; right:14px; bottom:14px; z-index:95; display:flex; flex-direction:column; gap:10px;
     }
     .floating a{
-      min-width:180px; padding:14px 16px; border-radius:999px;
-      font-weight:900; display:flex; align-items:center; justify-content:center; gap:10px;
-      box-shadow:var(--shadow);
+      min-width:180px; padding:14px 16px; border-radius:999px; font-weight:900;
+      display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:var(--shadow);
     }
-    .float-call{
-      color:#06111a;
-      background:linear-gradient(135deg, var(--cyan), var(--violet));
-    }
-    .float-wa{
-      color:#04110d;
-      background:#25D366;
-    }
-
+    .float-call{color:#06111a; background:linear-gradient(135deg, var(--cyan), var(--violet))}
+    .float-wa{color:#04110d; background:#25D366}
     @media (max-width: 980px){
       .hero-grid,.tech-strip,.grid-3,.grid-2{grid-template-columns:1fr}
       .stats-grid{grid-template-columns:1fr 1fr}
@@ -386,35 +199,20 @@
     "email":"mmpcserv@gmail.com",
     "url":"https://USERNAME.github.io/REPOSITORY/",
     "sameAs":["https://www.instagram.com/mmpcservis"],
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Čitluk / Mostar",
-      "addressCountry":"BA"
-    },
+    "address":{"@type":"PostalAddress","addressLocality":"Čitluk / Mostar","addressCountry":"BA"},
     "areaServed":["Čitluk","Mostar","Međugorje","Čapljina","Široki Brijeg"],
-    "serviceType":[
-      "Popravak računala",
-      "Popravak laptopa",
-      "Instalacija Windowsa",
-      "SSD upgrade",
-      "Čišćenje laptopa",
-      "Uklanjanje virusa",
-      "Spašavanje podataka"
-    ]
+    "serviceType":["Popravak računala","Popravak laptopa","Instalacija Windowsa","SSD upgrade","Čišćenje laptopa","Uklanjanje virusa","Spašavanje podataka"]
   }
   </script>
 </head>
 <body>
   <header class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="#top">
-        <span class="brand-mark">MM</span>
-        <span>MM PC Servis</span>
-      </a>
+      <a class="brand" href="#top"><span class="brand-mark">MM</span><span>MM PC Servis</span></a>
       <nav class="nav-links">
         <a href="#problemi">Problemi</a>
         <a href="#usluge">Usluge</a>
-        <a href="#tech">Tech pristup</a>
+        <a href="#tech">Prednosti</a>
         <a href="#faq">FAQ</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -426,12 +224,12 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="glass hero-main">
-          <div class="eyebrow">⚡ Gaming / Tech Edition • GitHub Pages Ready</div>
+          <div class="eyebrow">⚡ Gaming / Tech Edition • Čitluk / Mostar</div>
           <h1><span class="glow">Dark tech vibe.</span><br>Brz servis.<br>Jači prvi dojam.</h1>
           <p class="lead">
-            Ovo je agresivnija gaming / tech verzija za MM PC Servis. Zadržava ozbiljan servisni ton,
-            ali vizualno djeluje modernije, “jače” i skuplje. Idealno ako želiš da sajt izgleda više
-            kao premium tech brand nego klasična lokalna servis stranica.
+            MM PC Servis nudi popravak računala i laptopa u Čitluku i Mostaru.
+            Instalacija Windowsa, uklanjanje virusa, SSD upgrade, čišćenje laptopa i spašavanje podataka —
+            u modernom, brzom i preglednom web izdanju.
           </p>
           <div class="actions">
             <a class="btn btn-primary" href="tel:+38763568492">📞 Pozovi odmah</a>
@@ -447,18 +245,18 @@
 
         <div class="hero-side">
           <div class="glass hero-side-card">
-            <h3>Zašto ova verzija udara jače</h3>
+            <h3>Zašto odabrati MM PC Servis</h3>
             <div class="stats-grid">
-              <div class="stat"><b>Gaming hover efekti</b><span>Jači premium tech osjećaj bez težine sajta.</span></div>
-              <div class="stat"><b>Vizualni glow</b><span>Odmah izgleda skuplje i modernije.</span></div>
-              <div class="stat"><b>Jasni CTA gumbi</b><span>Telefon, WhatsApp i email su odmah ispred korisnika.</span></div>
-              <div class="stat"><b>1 file deploy</b><span>Samo zamijeni postojeći index.html.</span></div>
+              <div class="stat"><b>Brz odgovor</b><span>Telefon i WhatsApp odmah dostupni.</span></div>
+              <div class="stat"><b>Pouzdan servis</b><span>Jasna komunikacija i konkretna rješenja.</span></div>
+              <div class="stat"><b>Lokalna usluga</b><span>Čitluk, Mostar i okolica.</span></div>
+              <div class="stat"><b>Moderan pristup</b><span>Pregledan sajt i jednostavan kontakt.</span></div>
             </div>
           </div>
 
           <div class="glass hero-side-card code-panel">
-            <h3>Servisna logika</h3>
-            <p>Stil je jači, ali sadržaj je i dalje jasan i prodajan.</p>
+            <h3>Što rješavamo</h3>
+            <p>Najčešći problemi koje korisnici prijavljuju.</p>
             <div class="terminal">
               <div><span class="accent">$</span> scan --device laptop</div>
               <div><span class="good">✔</span> slow boot / overheating / unstable system</div>
@@ -476,7 +274,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Najčešći problemi</h2>
-          <p>SEO i korisnička jasnoća ostaju jaki i u ovoj agresivnijoj verziji.</p>
+          <p>Ako ti se računalo ponaša ovako, velika je šansa da možemo pomoći.</p>
         </div>
         <div class="grid-3">
           <article class="glass card problem"><h3>Laptop spor ili se smrzava</h3><p>Optimizacija Windowsa, SSD upgrade i čišćenje sustava često rješavaju problem.</p></article>
@@ -493,7 +291,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Usluge</h2>
-          <p>Čiste, konkretne i napisane da djeluju ozbiljno, bez generičkog filler teksta.</p>
+          <p>Jasne i konkretne usluge koje korisnici odmah razumiju.</p>
         </div>
         <div class="grid-3">
           <article class="glass card"><h3>Instalacija Windowsa</h3><p>Čista instalacija i osnovno podešavanje za stabilniji i brži rad.</p><ul class="list"><li>Brže pokretanje</li><li>Čist sustav</li><li>Manje bugova</li></ul></article>
@@ -509,8 +307,8 @@
     <section id="tech">
       <div class="wrap tech-strip">
         <div class="glass map-card">
-          <h3>Local SEO + Google Maps</h3>
-          <p>Ovaj blok i dalje čuva lokalnu optimizaciju za <strong>PC servis Čitluk</strong>, <strong>PC servis Mostar</strong>, <strong>popravak laptopa Mostar</strong> i <strong>instalacija Windowsa Čitluk</strong>.</p>
+          <h3>Područje usluge</h3>
+          <p>MM PC Servis pokriva Čitluk, Mostar i okolna mjesta.</p>
           <ul class="list">
             <li>Čitluk</li><li>Mostar</li><li>Međugorje</li><li>Čapljina</li><li>Široki Brijeg</li>
           </ul>
@@ -520,15 +318,15 @@
         </div>
 
         <div class="glass seo-card">
-          <h3>Gaming / tech balans</h3>
-          <p>Vizual sada izgleda agresivnije i modernije, ali stranica i dalje radi ono najvažnije: vodi korisnika ravno prema kontaktu.</p>
+          <h3>Zašto nas ljudi biraju</h3>
+          <p>Brz kontakt, jasna komunikacija i konkretne usluge za računala i laptope.</p>
           <div class="terminal">
-            <div><span class="accent">$</span> style --mode aggressive-tech</div>
-            <div><span class="good">✔</span> neon gradients / hover lift / glowing headline</div>
-            <div><span class="accent">$</span> contacts --channels</div>
+            <div><span class="accent">$</span> service --focus</div>
+            <div><span class="good">✔</span> windows / virusi / SSD / čišćenje / dijagnostika</div>
+            <div><span class="accent">$</span> location --area</div>
+            <div><span class="good">✔</span> Čitluk / Mostar / okolica</div>
+            <div><span class="accent">$</span> contact --channels</div>
             <div><span class="good">✔</span> phone / whatsapp / email / instagram</div>
-            <div><span class="accent">$</span> deploy --github-pages</div>
-            <div><span class="good">✔</span> replace existing index.html only</div>
           </div>
         </div>
       </div>
@@ -543,19 +341,19 @@
           <div class="faq-list">
             <details>
               <summary>Radite li vikendom?</summary>
-              <p>Da, po dogovoru. To je ostavljeno kao jasan benefit jer ljudima često baš to presudi da ti se jave.</p>
+              <p>Da, po dogovoru.</p>
             </details>
             <details>
               <summary>Isplati li se SSD upgrade starijeg laptopa?</summary>
-              <p>U velikom broju slučajeva da. SSD upgrade je često najisplativija nadogradnja za brži rad i kraće paljenje sustava.</p>
+              <p>U velikom broju slučajeva da. SSD upgrade često donosi veliko ubrzanje rada.</p>
             </details>
             <details>
               <summary>Radite li instalaciju Windowsa i uklanjanje virusa?</summary>
-              <p>Da. To su među najtraženijim uslugama, uz čišćenje laptopa, osnovnu optimizaciju i dijagnostiku hardvera.</p>
+              <p>Da, to su među najtraženijim uslugama.</p>
             </details>
             <details>
               <summary>Može li se staro računalo ubrzati bez kupnje novog?</summary>
-              <p>Vrlo često može. Ovisno o stanju uređaja, kombinacija SSD-a, čišćenja i optimizacije zna dati veliko poboljšanje.</p>
+              <p>Vrlo često može, ovisno o stanju uređaja i mogućnosti nadogradnje.</p>
             </details>
           </div>
         </div>
@@ -564,7 +362,7 @@
           <div class="section-head" style="margin-bottom:12px">
             <h2>Instagram i dodatni kontakt</h2>
           </div>
-          <p>Dodani su svi kontakti i zadržan je tamni gaming / tech vibe.</p>
+          <p>Prati MM PC Servis i javi se preko kanala koji ti najviše odgovara.</p>
           <div class="contact-links">
             <a class="contact-link" href="https://www.instagram.com/mmpcservis" target="_blank" rel="noopener noreferrer"><span>📸 Instagram</span><span>@mmpcservis</span></a>
             <a class="contact-link" href="mailto:mmpcserv@gmail.com"><span>✉️ Email</span><span>mmpcserv@gmail.com</span></a>
@@ -602,7 +400,7 @@
     </section>
 
     <div class="wrap footer">
-      MM PC Servis • Gaming / Tech verzija • Samo zamijeni postojeći index.html
+      MM PC Servis • Cleaned gaming / tech verzija • Samo zamijeni postojeći index.html
     </div>
   </main>
 
