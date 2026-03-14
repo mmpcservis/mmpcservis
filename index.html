@@ -12,12 +12,18 @@
   <meta property="og:description" content="Popravak računala i laptopa. Nazovi: +387 63 568 492" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="hr_HR" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png" />
+
   <style>
     :root{
-      --bg:#05070d; --bg2:#0a1020; --text:#f7fbff;
-      --muted:#b8c4e0; --muted2:#8aa0c5; --cyan:#44e3ff; --violet:#8a5cff;
-      --green:#2dffb2; --line:rgba(255,255,255,.08); --radius:26px;
-      --shadow:0 24px 80px rgba(0,0,0,.45); --max:1180px;
+      --bg:#05070d; --text:#f7fbff; --muted:#b8c4e0; --muted2:#8aa0c5;
+      --cyan:#44e3ff; --violet:#8a5cff; --green:#2dffb2;
+      --line:rgba(255,255,255,.08); --radius:26px; --shadow:0 24px 80px rgba(0,0,0,.45);
+      --max:1180px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -57,20 +63,18 @@
     }
     .nav{min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:16px}
     .brand{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.2px}
-    .brand-mark{
-      width:46px; height:46px; border-radius:16px; display:grid; place-items:center;
-      color:#051018; background:linear-gradient(135deg, var(--cyan), var(--violet));
-      box-shadow:0 0 0 1px rgba(255,255,255,.07), 0 12px 40px rgba(68,227,255,.2); font-weight:900;
-    }
+    .brand-logo{width:44px; height:44px; object-fit:contain; display:block}
     .nav-links{display:flex; flex-wrap:wrap; gap:18px; color:var(--muted2); font-size:.95rem}
     .nav-links a:hover{color:var(--text)}
     .nav-btn,.btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       min-height:52px; padding:0 18px; border-radius:999px; font-weight:900;
-      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+      transition:transform .18s ease, box-shadow .18s ease;
     }
     .nav-btn:hover,.btn:hover{transform:translateY(-2px)}
-    .nav-btn{color:#06111a; background:linear-gradient(135deg, var(--cyan), var(--violet)); box-shadow:0 18px 40px rgba(68,227,255,.18)}
+    .nav-btn,.btn-primary{color:#06111a; background:linear-gradient(135deg, var(--cyan), var(--violet)); box-shadow:0 18px 40px rgba(68,227,255,.18)}
+    .btn-secondary{border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:var(--text)}
+
     .hero{padding:58px 0 24px}
     .hero-grid{display:grid; grid-template-columns:1.08fr .92fr; gap:20px; align-items:stretch}
     .hero-main,.hero-side-card,.card,.contact-card,.map-card{border-radius:var(--radius)}
@@ -98,16 +102,13 @@
     }
     .lead{margin:0 0 22px; color:var(--muted); max-width:62ch; font-size:1.08rem}
     .actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px}
-    .btn-primary{color:#06111a; background:linear-gradient(135deg, var(--cyan), var(--violet)); box-shadow:0 20px 40px rgba(68,227,255,.18)}
-    .btn-secondary{border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); color:var(--text)}
     .badge-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
     .badge{padding:9px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.025); color:var(--muted); font-size:.9rem}
+
     .hero-side{display:grid; gap:18px}
     .hero-side-card{padding:24px}
     .stats-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:10px}
-    .stat,.card,.contact-link{
-      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
-    }
+    .stat,.card,.contact-link{transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease}
     .stat{
       padding:16px; border-radius:18px; border:1px solid rgba(255,255,255,.08);
       background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.018));
@@ -115,6 +116,7 @@
     .stat:hover,.card:hover,.contact-link:hover{transform:translateY(-3px); border-color:rgba(68,227,255,.25); box-shadow:0 18px 40px rgba(68,227,255,.08)}
     .stat b{display:block; margin-bottom:6px; font-size:1.08rem}
     .stat span{color:var(--muted2); font-size:.94rem}
+
     section{padding:20px 0}
     .section-head{margin-bottom:16px}
     .section-head h2{margin:0; font-size:clamp(1.65rem, 3vw, 2.35rem); letter-spacing:-.02em}
@@ -133,7 +135,8 @@
     .faq-list{display:grid; gap:12px}
     details{
       border-radius:18px; padding:18px; border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018)); transition:border-color .18s ease, transform .18s ease;
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.018));
+      transition:border-color .18s ease, transform .18s ease;
     }
     details:hover{border-color:rgba(68,227,255,.2)}
     summary{
@@ -157,17 +160,19 @@
     }
     .contact-link span:last-child{color:var(--muted2); font-size:.94rem}
     .footer{text-align:center; color:var(--text); font-size:.92rem; padding:26px 0 106px; font-weight:900; letter-spacing:.08em}
+
     .floating{
       position:fixed; right:-24px; bottom:18px; z-index:95;
       width:72px; height:72px; border-radius:999px;
       display:flex; align-items:center; justify-content:center;
       color:#04110d; background:#25D366; box-shadow:var(--shadow);
       border:0; cursor:pointer;
-      transition:right .22s ease, transform .22s ease, opacity .22s ease;
+      transition:right .22s ease, transform .22s ease;
     }
     .floating svg{width:30px; height:30px}
     .floating:hover,.floating:focus-visible{right:10px; transform:scale(1.05)}
     .floating.stopped{right:10px}
+
     @media (max-width: 980px){
       .hero-grid,.tech-strip,.grid-3,.grid-2{grid-template-columns:1fr}
       .stats-grid{grid-template-columns:1fr 1fr}
@@ -179,16 +184,11 @@
       .btn,.nav-btn{width:100%}
       .stats-grid{grid-template-columns:1fr}
       .contact-link{padding:12px 14px}
-      .contact-link span:last-child{
-        max-width:56%;
-        text-align:right;
-        word-break:break-word;
-      }
+      .contact-link span:last-child{max-width:56%; text-align:right; word-break:break-word;}
       .footer{padding-bottom:88px}
-      .floating{
-        width:64px; height:64px; bottom:14px; right:-22px;
-      }
+      .floating{width:64px; height:64px; bottom:14px; right:-22px}
       .floating svg{width:26px; height:26px}
+      .brand-logo{width:40px; height:40px}
     }
   </style>
   <script type="application/ld+json">
@@ -198,7 +198,7 @@
     "name":"MM PC Servis",
     "telephone":"+38763568492",
     "email":"mmpcserv@gmail.com",
-    "url":"https://USERNAME.github.io/REPOSITORY/",
+    "url":"https://mmpcservis.github.io/mmpcservis",
     "sameAs":["https://www.instagram.com/mmpcservis"],
     "address":{"@type":"PostalAddress","addressLocality":"Čitluk / Mostar","addressCountry":"BA"},
     "areaServed":["Čitluk","Mostar","Međugorje","Čapljina","Široki Brijeg"],
@@ -209,7 +209,10 @@
 <body>
   <header class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="#top"><span class="brand-mark">MM</span><span>MM PC Servis</span></a>
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="MM PC Servis logo" class="brand-logo" />
+        <span>MM PC Servis</span>
+      </a>
       <nav class="nav-links">
         <a href="#problemi">Problemi</a>
         <a href="#usluge">Usluge</a>
@@ -321,8 +324,8 @@
         </div>
 
         <div class="glass map-card">
-          <h3>Popravak računala i laptopa</h3>
-          <p>MM PC Servis pruža usluge za korisnike iz Čitluka, Mostara i okolice. Ako imaš problem s računalom, laptopom, Windowsima, virusima ili sporim radom sustava, javi se za dogovor.</p>
+          <h3>Za korisnike iz Čitluka i Mostara</h3>
+          <p>Ako tražiš servis za računalo ili laptop, instalaciju Windowsa, uklanjanje virusa, SSD upgrade ili čišćenje laptopa, MM PC Servis je dostupan za Čitluk, Mostar i okolna mjesta.</p>
           <ul class="list">
             <li>PC servis Čitluk</li>
             <li>PC servis Mostar</li>
@@ -388,8 +391,8 @@
         </div>
 
         <div class="glass contact-card">
-          <h3>Za korisnike iz Čitluka i Mostara</h3>
-          <p>Ako tražiš servis za računalo ili laptop, instalaciju Windowsa, uklanjanje virusa, SSD upgrade ili čišćenje laptopa, MM PC Servis je dostupan za Čitluk, Mostar i okolna mjesta.</p>
+          <h3>MM PC Servis</h3>
+          <p>Servis računala i laptopa za Čitluk, Mostar i okolna mjesta. Za dogovor oko popravka, instalacije Windowsa, čišćenja laptopa ili SSD nadogradnje javi se telefonom, WhatsApp porukom ili emailom.</p>
           <ul class="list">
             <li>PC servis Čitluk</li>
             <li>PC servis Mostar</li>
@@ -414,20 +417,14 @@
   <script>
     (function () {
       const fab = document.querySelector('.floating');
-      let scrollTimer = null;
-
-      function handleScroll() {
+      let timer = null;
+      function onScroll() {
         fab.classList.remove('stopped');
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(() => {
-          fab.classList.add('stopped');
-        }, 180);
+        clearTimeout(timer);
+        timer = setTimeout(() => fab.classList.add('stopped'), 180);
       }
-
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      window.addEventListener('load', () => {
-        setTimeout(() => fab.classList.add('stopped'), 250);
-      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('load', () => setTimeout(() => fab.classList.add('stopped'), 250));
     })();
   </script>
 </body>
