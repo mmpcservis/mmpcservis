@@ -75,7 +75,7 @@ Website se može besplatno hostati na:
 3. enable **GitHub Pages**
 4. website će biti live
 
-`https://username.github.io/repository`
+`https://mmpcservis.github.io/repository`
 
 ---
 
