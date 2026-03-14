@@ -116,9 +116,9 @@
     .stat b{display:block; margin-bottom:6px; font-size:1.08rem}
     .stat span{color:var(--muted2); font-size:.94rem}
     section{padding:20px 0}
-    .section-head{display:flex; justify-content:space-between; gap:16px; align-items:end; margin-bottom:16px}
+    .section-head{margin-bottom:16px}
     .section-head h2{margin:0; font-size:clamp(1.65rem, 3vw, 2.35rem); letter-spacing:-.02em}
-    .section-head p{margin:0; color:var(--muted2); max-width:60ch}
+    .section-head p{margin:0 0 8px; color:var(--muted2); max-width:60ch}
     .grid-3,.grid-2{display:grid; gap:16px}
     .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -156,16 +156,18 @@
       border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.016));
     }
     .contact-link span:last-child{color:var(--muted2); font-size:.94rem}
-    .footer{text-align:center; color:var(--muted2); font-size:.92rem; padding:26px 0 106px}
+    .footer{text-align:center; color:var(--text); font-size:.92rem; padding:26px 0 106px; font-weight:900; letter-spacing:.08em}
     .floating{
-      position:fixed; right:14px; bottom:14px; z-index:95; display:flex; flex-direction:column; gap:10px;
+      position:fixed; right:-24px; bottom:18px; z-index:95;
+      width:72px; height:72px; border-radius:999px;
+      display:flex; align-items:center; justify-content:center;
+      color:#04110d; background:#25D366; box-shadow:var(--shadow);
+      border:0; cursor:pointer;
+      transition:right .22s ease, transform .22s ease, opacity .22s ease;
     }
-    .floating a{
-      min-width:180px; padding:14px 16px; border-radius:999px; font-weight:900;
-      display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:var(--shadow);
-    }
-    .float-call{color:#06111a; background:linear-gradient(135deg, var(--cyan), var(--violet))}
-    .float-wa{color:#04110d; background:#25D366}
+    .floating svg{width:30px; height:30px}
+    .floating:hover,.floating:focus-visible{right:10px; transform:scale(1.05)}
+    .floating.stopped{right:10px}
     @media (max-width: 980px){
       .hero-grid,.tech-strip,.grid-3,.grid-2{grid-template-columns:1fr}
       .stats-grid{grid-template-columns:1fr 1fr}
@@ -176,25 +178,17 @@
       .actions{flex-direction:column}
       .btn,.nav-btn{width:100%}
       .stats-grid{grid-template-columns:1fr}
-      .section-head{flex-direction:column; align-items:start}
-      .floating{
-        left:10px; right:10px; bottom:10px;
-        flex-direction:row;
-        gap:10px;
-      }
-      .floating a{
-        min-width:0;
-        flex:1 1 0;
-        padding:12px 10px;
-        font-size:.95rem;
-      }
-      .footer{padding-bottom:88px}
       .contact-link{padding:12px 14px}
       .contact-link span:last-child{
         max-width:56%;
         text-align:right;
         word-break:break-word;
       }
+      .footer{padding-bottom:88px}
+      .floating{
+        width:64px; height:64px; bottom:14px; right:-22px;
+      }
+      .floating svg{width:26px; height:26px}
     }
   </style>
   <script type="application/ld+json">
@@ -283,8 +277,8 @@
     <section id="problemi">
       <div class="wrap">
         <div class="section-head">
-          <h2>Najčešći problemi</h2>
           <p>Ako ti se računalo ponaša ovako, velika je šansa da možemo pomoći.</p>
+          <h2>Najčešći problemi</h2>
         </div>
         <div class="grid-3">
           <article class="glass card problem"><h3>Laptop spor ili se smrzava</h3><p>Optimizacija Windowsa, SSD upgrade i čišćenje sustava često rješavaju problem.</p></article>
@@ -301,7 +295,6 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Usluge</h2>
-          <p>Jasne i konkretne usluge koje korisnici odmah razumiju.</p>
         </div>
         <div class="grid-3">
           <article class="glass card"><h3>Instalacija Windowsa</h3><p>Čista instalacija i osnovno podešavanje za stabilniji i brži rad.</p><ul class="list"><li>Brže pokretanje</li><li>Čist sustav</li><li>Manje bugova</li></ul></article>
@@ -328,14 +321,14 @@
         </div>
 
         <div class="glass map-card">
-          <h3>Zašto nas ljudi biraju</h3>
-          <p>Brz kontakt, jasna komunikacija i konkretne usluge za računala i laptope.</p>
+          <h3>Popravak računala i laptopa</h3>
+          <p>MM PC Servis pruža usluge za korisnike iz Čitluka, Mostara i okolice. Ako imaš problem s računalom, laptopom, Windowsima, virusima ili sporim radom sustava, javi se za dogovor.</p>
           <ul class="list">
-            <li>Brza dijagnostika i jasan prijedlog rješenja</li>
-            <li>Pošten savjet oko isplativosti popravka</li>
-            <li>Instalacija Windowsa, virusi, SSD upgrade i čišćenje</li>
-            <li>Lokalna usluga za Čitluk, Mostar i okolinu</li>
-            <li>Jednostavan kontakt telefonom, WhatsAppom ili emailom</li>
+            <li>PC servis Čitluk</li>
+            <li>PC servis Mostar</li>
+            <li>Popravak laptopa Mostar</li>
+            <li>Instalacija Windowsa Čitluk</li>
+            <li>SSD upgrade Mostar</li>
           </ul>
         </div>
       </div>
@@ -395,8 +388,8 @@
         </div>
 
         <div class="glass contact-card">
-          <h3>Popravak računala i laptopa</h3>
-          <p>MM PC Servis pruža usluge za korisnike iz Čitluka, Mostara i okolice. Ako imaš problem s računalom, laptopom, Windowsima, virusima ili sporim radom sustava, javi se za dogovor.</p>
+          <h3>Za korisnike iz Čitluka i Mostara</h3>
+          <p>Ako tražiš servis za računalo ili laptop, instalaciju Windowsa, uklanjanje virusa, SSD upgrade ili čišćenje laptopa, MM PC Servis je dostupan za Čitluk, Mostar i okolna mjesta.</p>
           <ul class="list">
             <li>PC servis Čitluk</li>
             <li>PC servis Mostar</li>
@@ -408,14 +401,34 @@
       </div>
     </section>
 
-    <div class="wrap footer">
-      MM PC Servis • Očišćen i regeneriran index • Samo zamijeni postojeći index.html
-    </div>
+    <div class="wrap footer">MM PC SERVIS</div>
   </main>
 
-  <div class="floating">
-    <a class="float-call" href="tel:+38763568492">📞 Nazovi</a>
-    <a class="float-wa" href="https://wa.me/38763568492" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-  </div>
+  <a class="floating" href="https://wa.me/38763568492" target="_blank" rel="noopener noreferrer" aria-label="Pošalji WhatsApp poruku">
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M19.11 17.41c-.29-.15-1.69-.83-1.95-.92-.26-.1-.45-.15-.64.15-.19.29-.73.92-.89 1.11-.16.2-.33.22-.61.07-.29-.15-1.2-.44-2.29-1.39-.85-.76-1.43-1.68-1.59-1.97-.16-.29-.02-.44.12-.59.13-.13.29-.33.44-.49.15-.17.19-.29.29-.48.1-.2.05-.37-.02-.52-.08-.15-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49l-.55-.01c-.19 0-.49.07-.75.37-.26.29-.98.96-.98 2.35 0 1.39 1.01 2.74 1.15 2.93.15.2 1.99 3.04 4.82 4.26.67.29 1.2.46 1.61.59.68.22 1.3.19 1.79.12.55-.08 1.69-.69 1.93-1.35.24-.66.24-1.22.17-1.34-.06-.12-.25-.2-.53-.34z"/>
+      <path d="M16.02 3.2c-7.02 0-12.72 5.69-12.72 12.7 0 2.23.58 4.41 1.68 6.33L3 29l6.96-1.82a12.77 12.77 0 0 0 6.06 1.54h.01c7.01 0 12.71-5.69 12.71-12.71 0-3.39-1.32-6.58-3.72-8.98A12.63 12.63 0 0 0 16.02 3.2zm0 23.38h-.01a10.6 10.6 0 0 1-5.41-1.49l-.39-.23-4.13 1.08 1.1-4.02-.25-.41a10.55 10.55 0 0 1-1.62-5.59c0-5.84 4.76-10.59 10.61-10.59 2.83 0 5.49 1.1 7.49 3.1 2 2 3.1 4.66 3.1 7.49 0 5.84-4.76 10.6-10.59 10.6z"/>
+    </svg>
+  </a>
+
+  <script>
+    (function () {
+      const fab = document.querySelector('.floating');
+      let scrollTimer = null;
+
+      function handleScroll() {
+        fab.classList.remove('stopped');
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          fab.classList.add('stopped');
+        }, 180);
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('load', () => {
+        setTimeout(() => fab.classList.add('stopped'), 250);
+      });
+    })();
+  </script>
 </body>
 </html>
