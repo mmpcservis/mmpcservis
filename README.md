@@ -1,14 +1,23 @@
-# MM PC Servis — gaming tech verzija
+# MM PC Servis — favicon + logo + kompletan index
 
-Ovo je agresivnija dark gaming / tech varijanta.
+U paketu su:
+- index.html
+- logo.png
+- favicon.ico
+- favicon-16x16.png
+- favicon-32x32.png
+- favicon-48x48.png
+- favicon-180x180.png
+- favicon-192x192.png
+- favicon-512x512.png
 
-## Dodano
-- jači glow headline
-- gaming / neon hover efekti
-- podignuti hover na karticama i kontaktima
-- zadržan ispravan FAQ sa skrivenim odgovorima
-- svi kontakti ostaju unutra
-- GitHub Pages friendly
+## Što trebaš imati u root folderu repo-a
+Sve ove fajlove stavi u isti folder gdje je `index.html`.
 
-## Kako koristiti
-Samo zamijeni postojeći `index.html` u live repo-u ovom verzijom.
+## Bitno
+`index.html` već sadrži:
+- favicon linkove
+- logo u headeru
+- sve meta tagove
+- sticky WhatsApp ikonicu za mobitel
+- kompletan sadržaj sajta
